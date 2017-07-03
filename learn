@@ -1,0 +1,23 @@
+observable:
+@observable list = []; list就被监控了。
+
+(@)computed：
+计算值（不要低估喔）根据现有的状态或其它计算值衍生出的值。
+用法
+@observable arr = [1,2]
+@computed get total (){ //@computed 可以省略
+    return this.arr[0]+this.arr[1]
+}
+
+autorun:
+用法  当name 或者 age 变化后会自动出发autorun（加载时会触发一次）
+const demo = autorun(() => {
+    console.log(name,age)
+})
+
+
+action：
+在严格模式下 必须通过action改变 observable（被观察的对象）
+let iamAction = action("actionName",function(){
+    //your action work
+})

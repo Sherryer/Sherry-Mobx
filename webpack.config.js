@@ -2,7 +2,9 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        learn: './Demos/learn/test.jsx'
+        learn: './Demos/learn/test.jsx',
+        autorunAsync: './autorunAsync/',
+        atom: './atom/'
     },
     output: {
         path: "./compress/",

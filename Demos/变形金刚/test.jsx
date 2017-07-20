@@ -1,4 +1,5 @@
 function decorateArmour(target, key, descriptor) {
+    console.log(target,key,descriptor);
     const method = descriptor.value;
     let moreDef = 100;
     let ret;
@@ -54,8 +55,8 @@ class Man{
     }
 
 
-    @moreHealth
-    @moreAtk
+    // @moreHealth
+    // @moreAtk
     @decorateArmour
     init(def,atk,hp){
         this.def = def; // 防御值

@@ -4,7 +4,8 @@ module.exports = {
     entry: {
         learn: './Demos/learn/test.jsx',
         autorunAsync: './autorunAsync/',
-        atom: './atom/'
+        atom: './atom/',
+        bianxingjingang:"./Demos/变形金刚/test.jsx"
     },
     output: {
         path: "./compress/",
@@ -13,7 +14,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /(\.jsx?$|\.js?$)/,
                 loader: 'babel-loader'
             },
             {

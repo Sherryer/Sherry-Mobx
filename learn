@@ -10,10 +10,11 @@ observable:
 }
 
 autorun:
-用法  当name 或者 age 变化后会自动出发autorun（加载时会触发一次）
+用法  当（被监听的）name 或者 age 变化后会自动出发autorun（加载时会触发一次）
 const demo = autorun(() => {
     console.log(name,age)
 })
+
 
 
 action：

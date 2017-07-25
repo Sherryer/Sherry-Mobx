@@ -48,7 +48,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _dec, _class, _desc, _value, _class2, _dec2, _class3;
+	var _dec, _class, _desc, _value, _class2;
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -82,7 +82,7 @@
 	}
 
 	function decorateArmour(target, key, descriptor) {
-	    console.log(target, key, descriptor);
+	    // console.log(target,key,descriptor);
 	    var method = descriptor.value;
 	    var moreDef = 100;
 	    var ret = void 0;
@@ -94,9 +94,7 @@
 
 	        args[0] += moreDef;
 	        ret = method.apply(target, args);
-	        return ret;
 	    };
-	    return descriptor;
 	}
 
 	function moreAtk(target, key, descriptor) {
@@ -108,7 +106,7 @@
 	        }
 
 	        args[1] += moreatk;
-	        return changeFunction.apply(target, args);
+	        changeFunction.apply(target, args);
 	    };
 	}
 
@@ -121,7 +119,7 @@
 	        }
 
 	        args[2] += morehealth;
-	        return method.apply(target, args);
+	        method.apply(target, args);
 	    };
 	}
 
@@ -178,16 +176,6 @@
 	//
 	console.log('\u5F53\u524D\u72B6\u6001 ===> ' + tony);
 	// 输出：当前状态 ===> 防御力:102,攻击力:3,血量:3
-
-
-	function doge(target) {
-	    // console.log(target)
-	    // target.isDoge = true
-	}
-
-	var Dog = (_dec2 = doge(123123), _dec2(_class3 = function Dog() {
-	    _classCallCheck(this, Dog);
-	}) || _class3);
 
 /***/ })
 /******/ ]);

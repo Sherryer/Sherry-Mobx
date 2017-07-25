@@ -1,5 +1,5 @@
 function decorateArmour(target, key, descriptor) {
-    console.log(target,key,descriptor);
+    // console.log(target,key,descriptor);
     const method = descriptor.value;
     let moreDef = 100;
     let ret;
@@ -7,9 +7,7 @@ function decorateArmour(target, key, descriptor) {
     descriptor.value = (...args)=>{
         args[0] += moreDef;
         ret = method.apply(target, args);
-        return ret;
     }
-    return descriptor;
 }
 
 
@@ -19,8 +17,8 @@ function moreAtk(target, key, descriptor){
     let changeFunction = descriptor.value;
     let moreatk = 100;
     descriptor.value = (...args)=>{
-        args[1] += moreatk
-        return changeFunction.apply(target,args)
+        args[1] += moreatk;
+        changeFunction.apply(target,args)
     }
 }
 
@@ -30,7 +28,7 @@ function moreHealth(target,key,descriptor){
     let morehealth = 100;
     descriptor.value = (...args)=>{
         args[2] += morehealth;
-        return method.apply(target,args)
+        method.apply(target,args)
     }
 }
 

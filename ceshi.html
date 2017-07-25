@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>generator</title>
 </head>
 <body>
 
 </body>
 <script>
-    var obj = {a:function () {
-        console.log(123)
-    }};
+   function* test(z){
+       for(var i = 0;i<z;i++){
+           yield i
+       }
+       return i
+   }
 
-    obj.a = function (){
-        console.log(obj.a)
-    }
-
-    obj.a();
-
-    var a = 1;
-    a = a+1
+   var t = test(5);
+   console.log(t)
+   console.log(t.next())
+   console.log(t.next())
+   console.log(t.next())
+   console.log(t.next())
+   console.log(t.next())
+   console.log(t.next())
 </script>
 </html>

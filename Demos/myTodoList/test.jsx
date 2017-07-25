@@ -3,6 +3,17 @@ import {observer} from "mobx-react";
 import React, {Component} from "react";
 import reactDom from "react-dom";
 
+class Task {
+    constructor (z){
+        this.content = z
+    }
+    id = Math.random();
+    @observable finish = false;
+    done = ()=>{
+        this.finish = !this.finish;
+    }
+}
+
 class Store {
     @observable list = [];
     num = 0;
@@ -25,16 +36,6 @@ let addList = action("add-list",function (z) {
     store.list.push(z)
 });
 
-class Task {
-    constructor (z){
-        this.content = z
-    }
-    id = Math.random();
-    @observable finish = false;
-    done = ()=>{
-        this.finish = !this.finish;
-    }
-}
 
 @observer
 class Test extends Component{
